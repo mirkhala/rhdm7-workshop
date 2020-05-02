@@ -1,0 +1,19 @@
+package com.user1.onboardingrules;
+import com.user1.onboardingrules.Solicitante;
+
+rule "Establecer datos iniciales de un Solicitante"
+    dialect "mvel"
+    ruleflow-group "initialize-rules"
+    no-loop true
+    when
+        solicitante : Solicitante( )
+    then
+        System.out.println("Rule fired : [" + drools.getRule().getName()+"]");
+        solicitante.setCredito(0);
+        solicitante.setEvaluacion(0);
+        solicitante.setStatus("Aprobado");
+        solicitante.setMensaje("");
+
+end
+
+

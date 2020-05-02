@@ -1,0 +1,12 @@
+package com.user1.onboardingrules;
+
+import java.lang.Number;
+
+rule "BuroInsuficiente"
+	dialect "mvel"
+	ruleflow-group "validaBuro"
+	when
+		El solicitante tiene un puntaje en buro menor a 500
+	then
+		Solicitud rechazada por "Puntaje en buro insuficiente."
+end

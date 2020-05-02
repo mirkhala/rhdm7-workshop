@@ -1,0 +1,12 @@
+package com.user1.onboardingrules;
+
+import java.lang.Number;
+
+rule "BuroInsuficienteMayor35"
+	dialect "mvel"
+	ruleflow-group "validaBuro"
+	when
+		El candidato es mayor a 35 años, y su puntaje en el buro es menor a 700
+	then
+		Solicitud rechazada por "Buro insuficiente para candidato mayor a 35 años."
+end
